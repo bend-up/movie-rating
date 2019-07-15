@@ -1,9 +1,13 @@
 package com.github.bendup.movieratingserver.domain.movie;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.github.bendup.movieratingserver.domain.review.Review;
+import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import javax.validation.Valid;
 
 @RestController()
 @RequestMapping("/movies")
@@ -16,7 +20,20 @@ public class MovieController {
     }
 
     @GetMapping()
-    public Flux<Movie> findAll() {
-        return movieService.findAll();
+    public Flux<Movie> getAll() {
+        return movieService.getAll();
+    }
+
+    @PostMapping("/{id}/reviews")
+    @Transactional
+    public Mono<ResponseEntity<Movie>> addReview(@PathVariable("id") String id, @Valid @RequestBody Review review) {
+
+        return movieService.getById(id)
+                .flatMap(existingMovie -> {
+                    existingMovie.addReview(review);
+                    return movieService.save(existingMovie);
+                })
+                .map(updatedMovie -> ResponseEntity.ok(updatedMovie))
+                .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 }
