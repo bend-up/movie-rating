@@ -61,7 +61,10 @@ export const getMovies = () => async (dispatch, getState) => {
 export const rateMovie = (movieId, rating) => async (dispatch, getState) => {
   try {
     dispatch(rateMovieLaunched());
-    const response = await axios.post(`http://localhost:8080/movies/${movieId}/reviews`, {rating: rating});
+    const response = await axios.post(
+      `http://localhost:8080/movies/${movieId}/reviews`,
+      { rating: rating }
+    );
 
     dispatch(rateMovieSuccess(response.data));
   } catch (error) {

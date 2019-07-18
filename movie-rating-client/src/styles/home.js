@@ -9,6 +9,7 @@ const Button = styled.div`
   padding: 5px 10px 5px;
   margin-left: 3px;
   margin-right: 3px;
+  margin-bottom: 5px;
   text-decoration: none;
   border: ${props =>
     props.loading ? 'lightgrey solid 1px' : 'black solid 1px'};
@@ -36,6 +37,5 @@ const Image = styled.img`
 const MovieTitle = styled.span`
   cursor: pointer;
 `;
-
 
 export { Button, Title, App, Image, MovieTitle };

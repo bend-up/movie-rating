@@ -6,9 +6,7 @@ import Movie from '../../components/movie';
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const { movies, moviesLoading } = useSelector(
-    state => state.Home
-  );
+  const { movies, moviesLoading } = useSelector(state => state.Home);
 
   const Movies = props =>
     props.movies.map(movie => (
