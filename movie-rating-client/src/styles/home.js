@@ -13,9 +13,14 @@ const Button = styled.div`
   border: ${props =>
     props.loading ? 'lightgrey solid 1px' : 'black solid 1px'};
   user-select: none;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   outline: none;
+  text-align: left;
   color: ${props => (props.loading ? 'lightgrey' : 'black')};
+  &:hover {
+    background: #888;
+  }
 `;
 
 const Title = styled.h1`
@@ -28,4 +33,9 @@ const Image = styled.img`
   transform: ${props => `rotate(${props.angle}deg)`};
 `;
 
-export { Button, Title, App, Image };
+const MovieTitle = styled.span`
+  cursor: pointer;
+`;
+
+
+export { Button, Title, App, Image, MovieTitle };

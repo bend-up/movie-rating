@@ -7,8 +7,7 @@ import Movie from '../../components/movie';
 const HomePage = () => {
   const dispatch = useDispatch();
   const { movies, moviesLoading } = useSelector(
-    state => state.Home,
-    shallowEqual
+    state => state.Home
   );
 
   const Movies = props =>

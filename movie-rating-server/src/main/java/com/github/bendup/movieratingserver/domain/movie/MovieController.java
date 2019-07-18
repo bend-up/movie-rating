@@ -24,6 +24,7 @@ public class MovieController {
         return movieService.getAll();
     }
 
+    @CrossOrigin
     @PostMapping("/{id}/reviews")
     @Transactional
     public Mono<ResponseEntity<Movie>> addReview(@PathVariable("id") String id, @Valid @RequestBody Review review) {
