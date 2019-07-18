@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import App from './App';
 import {configureStore} from 'redux-starter-kit';
 
-import homePageReducer from './pages/HomePage/homePage';
+import homePageReducer from './state/home';
 
 const store = configureStore({
     reducer : {

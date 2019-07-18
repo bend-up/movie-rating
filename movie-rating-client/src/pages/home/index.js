@@ -2,9 +2,9 @@ import React, {useEffect}  from 'react';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import {
   App, Button, Title
-} from '../../style/home';
-import { getMovies } from './homePage';
-import Movie from '../../components/Movie';
+} from '../../styles/home';
+import { getMovies } from '../../state/home';
+import Movie from '../../components/movie';
 
 const HomePage = () => {
   const dispatch = useDispatch();
