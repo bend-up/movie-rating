@@ -1,4 +1,5 @@
 import React from 'react';
+import {dates} from '../../utils';
 
 const Movie = (props) => {
   const genres = {
@@ -18,7 +19,7 @@ const Movie = (props) => {
   return (
     <div>
       <p><span title={genres[genre].description}>{genres[genre].icon}</span> {title}</p>
-      <p>{released}</p>
+      <p>Released: {dates.getFormattedDate(released)}</p>
       <p>{averageRating ? Math.round(averageRating * 100) / 100 : 'No ratings'}</p>
       <p></p>
     </div>
