@@ -10,7 +10,8 @@ const Button = styled.div`
   margin-left: 3px;
   margin-right: 3px;
   text-decoration: none;
-  border: ${props => (props.loading ? 'lightgrey solid 1px' : 'black solid 1px')};
+  border: ${props =>
+    props.loading ? 'lightgrey solid 1px' : 'black solid 1px'};
   user-select: none;
   display: inline-block;
   outline: none;
@@ -24,12 +25,7 @@ const Title = styled.h1`
 
 const Image = styled.img`
   height: 30vh;
-  transform: ${props => `rotate(${props.angle}deg)`}
+  transform: ${props => `rotate(${props.angle}deg)`};
 `;
 
-export {
-  Button,
-  Title,
-  App,
-  Image
-};
+export { Button, Title, App, Image };

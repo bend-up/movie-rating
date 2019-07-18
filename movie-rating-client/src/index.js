@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './App';
-import {configureStore} from 'redux-starter-kit';
+import { configureStore } from 'redux-starter-kit';
 
 import homePageReducer from './state/home';
 
 const store = configureStore({
-    reducer : {
-        Home : homePageReducer
-    }
+  reducer: {
+    Home: homePageReducer
+  }
 });
 
 ReactDOM.render(
