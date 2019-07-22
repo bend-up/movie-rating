@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { App, Button, Title } from '../../styles/home';
 import { getMovies } from '../../state/home';
 import Movie from '../../components/movie';
