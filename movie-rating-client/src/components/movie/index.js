@@ -20,22 +20,32 @@ const Movie = props => {
   const Title = () => {
     return (
       <MovieTitle onClick={toggleRating}>
-        <span title={genres[movieGenre].description}>
+        <span
+          title={genres[movieGenre].description}
+          data-testid="movie-genre-icon"
+        >
           {genres[movieGenre].icon}
         </span>
-        {' ' + title}
+        <span data-testid="movie-title">{' ' + title}</span>
       </MovieTitle>
     );
   };
 
-  const CurrentRating = () =>
-    averageRating
-      ? 'Rating: ' + Math.round(averageRating * 100) / 100
-      : 'No ratings';
-  const ReleaseDate = () => <p>Released: {dates.getFormattedDate(released)}</p>;
+  const CurrentRating = () => (
+    <span data-testid="movie-current-rating">
+      {averageRating
+        ? 'Rating: ' + Math.round(averageRating * 100) / 100
+        : 'No ratings'}
+    </span>
+  );
+  const ReleaseDate = () => (
+    <p data-testid="movie-released">
+      Released: {dates.getFormattedDate(released)}
+    </p>
+  );
   const RatingRow = () => {
     return ratingVisible ? (
-      <p>
+      <p data-testid="movie-rating">
         <Rating
           onClick={submittedRating =>
             dispatch(rateMovie(movieId, submittedRating * 2))
