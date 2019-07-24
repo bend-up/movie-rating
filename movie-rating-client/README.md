@@ -1,16 +1,14 @@
-# React-redux boilerplate using hooks :fishing_pole_and_fish: :fire:
+# Movie rating client
 
-<p align="center">
-  <img src="./src/assets/images/header.png">
-</p>
+## Prerequiresites
 
-<div align="center">
-  <a href="https://cranky-hypatia-4af44c.netlify.com">Demo !</a>
-</div>
-
-
-React boilerplate using the latest version of react-redux with Hooks (useDispatch, useSelector). The app itself is a simple but cute counter !
-
+  * Node
+  * Yarn
+  
 ## Installation
 
-`npm install && npm start`
+`yarn install`
+
+## Running
+
+`yarn start`
