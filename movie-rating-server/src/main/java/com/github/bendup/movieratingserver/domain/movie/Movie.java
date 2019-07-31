@@ -8,7 +8,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Data
 @Document(collection = "movies")
@@ -16,7 +15,7 @@ class Movie {
 
     @Id
     private String _id;
-    private String movieId = UUID.randomUUID().toString();
+    private String movieId;
     private String title;
     private String genre;
     private Instant released;

@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  movie-rating-database:
+    image: movie-rating/database:0.1
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: movies
+      MONGODB_DATABASE: movies
+    build:
+      context: movie-rating-database
+    ports:
+      - "27017:27017"
+  movie-rating-server:
+    image: movie-rating/server:0.1
+    build:
+      context: movie-rating-server
+      args:
+        JAR_FILE: target/movie-rating-server-0.1.jar
+    ports:
+      - "8080:8080"
+    depends_on:
+      - movie-rating-database
+  movie-rating-client:
+    image: movie-rating/client:0.1
+    build:
+      context: movie-rating-client
+    ports:
+      - "80:80"
+    depends_on:
+      - movie-rating-server
+

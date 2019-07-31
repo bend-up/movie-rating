@@ -3,6 +3,7 @@
 ## Prerequiresites
 
   * Docker CE/EE
+  * Docker Compose
   * movie-rating-server's prerequiresites
   
 ## Running

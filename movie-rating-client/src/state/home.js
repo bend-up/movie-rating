@@ -30,7 +30,6 @@ const { actions, reducer } = createSlice({
         return movie;
       });
       state.moviesLoading = false;
-      console.log(state.movies);
     },
     rateMovieFailure(state, action) {
       state.moviesLoading = false;
