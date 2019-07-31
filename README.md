@@ -8,4 +8,5 @@
   
 ## Running
 
-`./run.sh`
+  * Execute `./run.sh` and wait for all containers to start up
+  * Navigate to http://localhost
